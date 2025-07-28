@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Gift, AlertTriangle } from 'lucide-react'
+import { Gift, AlertTriangle } from "lucide-react"
 import ProgressBar from "./progress-bar"
 import { useLocalization } from "./localization-provider"
 
@@ -95,7 +95,7 @@ export default function GiftCardClaimPage({ prizeAmount, username }: GiftCardCla
       </div>
 
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <ProgressBar currentStep={5} totalSteps={5} />
+        <ProgressBar currentStep={6} totalSteps={6} />
       </motion.div>
 
       <div className="flex flex-col items-center flex-1 w-full max-w-md mt-0 z-10">

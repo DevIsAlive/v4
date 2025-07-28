@@ -8,6 +8,7 @@ import SpinToWinPage from "@/components/spin-to-win-page"
 import UsernamePage from "@/components/username-page"
 import QuizPage from "@/components/quiz-page"
 import LootBoxGamePage from "@/components/loot-box-game-page"
+import HumanVerificationPage from "@/components/human-verification-page"
 import GiftCardClaimPage from "@/components/gift-card-claim-page"
 import LiveWinnersTicker from "@/components/live-winners-ticker"
 import DisclaimerButton from "@/components/disclaimer-button"
@@ -37,7 +38,7 @@ export default function Component() {
   }, [])
 
   const nextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, 5))
+    setCurrentPage((prev) => Math.min(prev + 1, 6)) // Updated to 6 total pages
   }
 
   const pageVariants = {
@@ -112,6 +113,19 @@ export default function Component() {
         {currentPage === 5 && (
           <motion.div
             key="page5"
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            transition={pageTransition}
+          >
+            <HumanVerificationPage onNext={nextPage} username={username} />
+          </motion.div>
+        )}
+
+        {currentPage === 6 && (
+          <motion.div
+            key="page6"
             initial="initial"
             animate="in"
             exit="out"
